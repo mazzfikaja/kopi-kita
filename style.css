@@ -1,0 +1,469 @@
+:root {
+    --dark-brown: #4a2c2a;
+    --cream: #fdf6e3;
+    --burnt-orange: #cc5500;
+    --white: #ffffff;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--cream);
+    color: var(--dark-brown);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--dark-brown);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--burnt-orange);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.cta-button:hover {
+    background-color: #a54400;
+    transform: translateY(-3px);
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 1.5rem 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/landingpage.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(253, 246, 227, 0.5); 
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    color: var(--dark-brown);
+}
+
+
+#proses {
+    position: relative;
+    overflow: hidden;
+}
+
+.proses-container {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.proses-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 2rem; 
+}
+
+.proses-track {
+    display: flex;
+    width: 400vw;
+}
+
+.proses-card {
+    width: 100vw;
+    height: 100%;
+    padding: 0 5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    gap: 1.5rem; 
+}
+
+.proses-card h3 {
+    margin-top: 0;
+    max-width: 450px; 
+}
+
+.proses-card img {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#pilihan-kopi {
+    position: relative;
+    overflow: hidden;
+}
+
+.pilihan-kopi-container {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pilihan-kopi-track {
+    display: flex;
+    width: 900vw; /* 9 kartu * 100vw */
+}
+
+.kopi-card-wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.kopi-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(74, 44, 42, 0.1);
+    border: 1px solid rgba(74, 44, 42, 0.05);
+    width: 100%;
+    max-width: 380px; 
+    overflow: hidden; 
+}
+
+.kopi-card img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+}
+
+.kopi-card-info {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.kopi-card-info h4 {
+    margin-bottom: 1rem;
+}
+
+.kopi-card-info p {
+    margin: 0.25rem 0;
+    line-height: 1.5;
+}
+
+.kopi-card-info p strong {
+    color: var(--dark-brown);
+}
+
+.kopi-card-info .price {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: var(--burnt-orange);
+}
+
+#paket {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: var(--cream);
+    position: relative;
+    z-index: 2;
+}
+
+.paket-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.paket-card {
+    background-color: var(--white);
+    border: 1px solid rgba(74, 44, 42, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paket-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.paket-card .price {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--burnt-orange);
+    font-weight: 700;
+}
+
+.paket-card .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-brown);
+    color: var(--cream);
+    padding: 3rem 0;
+    text-align: center;
+    position: relative; 
+    z-index: 2;
+}
+
+footer .logo, footer .copyright {
+    color: var(--cream);
+}
+
+footer .social-links a {
+    color: var(--cream);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--burnt-orange);
+}
+
+.section-title, .paket-card {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 2rem 2.5rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.modal-content p {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.close-button:hover {
+    color: var(--dark-brown);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+#kirim-pesanan-btn {
+    width: 100%;
+    text-align: center;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999; 
+
+    background-color: var(--burnt-orange);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-decoration: none;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #a54400;
+}
+
+#scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
