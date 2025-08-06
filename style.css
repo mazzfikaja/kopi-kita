@@ -31,9 +31,9 @@ img {
 }
 
 .container {
-    max-width: 1100px;
+    width: 90%;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
 }
 
 h1, h2, h3, h4 {
@@ -64,7 +64,6 @@ p {
     font-size: 1rem;
     margin: 0.5rem 0;
 }
-
 
 .cta-button {
     display: inline-block;
@@ -134,7 +133,7 @@ header nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(253, 246, 227, 0.5); 
+    background-color: rgba(253, 246, 227, 0.5);
     z-index: -1;
 }
 
@@ -142,134 +141,177 @@ header nav {
     max-width: 700px;
 }
 
-.hero-content h1 {
-    color: var(--dark-brown);
+.hero-content p {
+    font-size: 1.1rem;
 }
 
-
-#proses {
+footer {
+    background-color: var(--dark-brown);
+    color: var(--cream);
+    padding: 3rem 0;
+    text-align: center;
     position: relative;
-    overflow: hidden;
+    z-index: 2;
 }
 
-.proses-container {
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
+footer .logo,
+footer .copyright {
+    color: var(--cream);
 }
 
-.proses-intro {
+footer .social-links a {
+    color: var(--cream);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--burnt-orange);
+}
+
+.slider-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-intro {
     text-align: center;
     max-width: 600px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    margin-bottom: 2rem; 
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
 }
 
-.proses-track {
-    display: flex;
-    width: 400vw;
-}
-
-.proses-card {
-    width: 100vw;
-    height: 100%;
-    padding: 0 5vw;
-    text-align: center;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    justify-content: center;
-    gap: 1.5rem; 
-}
-
-.proses-card h3 {
-    margin-top: 0;
-    max-width: 450px; 
-}
-
-.proses-card img {
-    width: 100%;
-    max-width: 450px;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-#pilihan-kopi {
+.slider-container {
     position: relative;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
 }
 
-.pilihan-kopi-container {
-    height: 100vh;
-    position: sticky;
-    top: 0;
+.slider-track {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
 }
 
-.pilihan-kopi-track {
+.slider-nav {
+    position: absolute;
+    width: 100%;
+    max-width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    width: 900vw; /* 9 kartu * 100vw */
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
 }
 
-.kopi-card-wrapper {
-    width: 100vw;
+.slider-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #eee;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    pointer-events: all;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
 }
 
-.kopi-card {
+.slider-button:hover {
+    background-color: white;
+    transform: scale(1.1);
+}
+
+.slider-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+.slider-button svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--dark-brown);
+}
+
+.slider-card {
+    flex-shrink: 0;
+    margin: 0 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info {
+    text-align: center;
+}
+
+.card-info h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0.25rem 0;
+}
+
+.card-info .price {
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--burnt-orange);
+}
+
+#proses .proses-card {
+    width: 380px;
+    align-items: center;
+}
+
+#proses .proses-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(74, 44, 42, 0.1);
+}
+
+#proses .card-info {
+    padding-top: 1.5rem;
+}
+
+#pilihan-kopi .kopi-card {
+    width: 340px;
     background-color: var(--white);
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(74, 44, 42, 0.1);
     border: 1px solid rgba(74, 44, 42, 0.05);
-    width: 100%;
-    max-width: 380px; 
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-.kopi-card img {
+#pilihan-kopi .kopi-card img {
     width: 100%;
-    height: 250px; 
+    height: 220px;
     object-fit: cover;
 }
 
-.kopi-card-info {
+#pilihan-kopi .card-info {
     padding: 1.5rem;
     text-align: left;
 }
 
-.kopi-card-info h4 {
-    margin-bottom: 1rem;
-}
-
-.kopi-card-info p {
-    margin: 0.25rem 0;
-    line-height: 1.5;
-}
-
-.kopi-card-info p strong {
-    color: var(--dark-brown);
-}
-
-.kopi-card-info .price {
-    margin-top: 1rem;
-    font-weight: 700;
-    color: var(--burnt-orange);
-}
-
 #paket {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 0;
     background-color: var(--cream);
     position: relative;
     z-index: 2;
@@ -289,20 +331,21 @@ header nav {
     padding: 2rem;
     text-align: center;
     width: 320px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .paket-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.paket-card .price {
+.paket-card .price-desc {
     font-family: var(--font-heading);
     font-size: 1.2rem;
     color: var(--burnt-orange);
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .paket-card .description {
@@ -310,32 +353,8 @@ header nav {
     margin-bottom: 2rem;
 }
 
-/* Footer */
-footer {
-    background-color: var(--dark-brown);
-    color: var(--cream);
-    padding: 3rem 0;
-    text-align: center;
-    position: relative; 
-    z-index: 2;
-}
-
-footer .logo, footer .copyright {
-    color: var(--cream);
-}
-
-footer .social-links a {
-    color: var(--cream);
-    text-decoration: none;
-    margin: 0 0.5rem;
-    transition: color 0.3s ease;
-}
-
-footer .social-links a:hover {
-    color: var(--burnt-orange);
-}
-
-.section-title, .paket-card {
+.section-title,
+#paket .paket-card {
     opacity: 0;
     transform: translateY(50px);
 }
@@ -368,7 +387,7 @@ footer .social-links a:hover {
     width: 90%;
     max-width: 500px;
     position: relative;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     transform: translateY(-20px);
     transition: transform 0.3s ease;
 }
@@ -435,8 +454,7 @@ footer .social-links a:hover {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 999; 
-
+    z-index: 999;
     background-color: var(--burnt-orange);
     color: var(--white);
     width: 50px;
@@ -444,14 +462,11 @@ footer .social-links a:hover {
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     text-decoration: none;
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
